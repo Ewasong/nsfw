@@ -23,6 +23,7 @@ def standardize(img):
 
 def load_image( infilename ) :
     img = Image.open( infilename )
+    img = img.convert('RGB')
     img = img.resize((_IMAGE_SIZE, _IMAGE_SIZE))
     img.load()
     data = np.asarray( img, dtype=np.float32 )
@@ -31,7 +32,7 @@ def load_image( infilename ) :
 
 def predict(image_path):
     with tf.Session() as sess:
-        graph = tf.get_default_graph();
+        graph = tf.get_default_graph()
         tf.saved_model.loader.load(sess, [tf.saved_model.tag_constants.SERVING], _MODEL_DIR)
         inputs = graph.get_tensor_by_name("input_tensor:0")
         probabilities_op = graph.get_tensor_by_name('softmax_tensor:0')
