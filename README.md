@@ -10,6 +10,7 @@ This repo contains code for running Not Suitable for Work (NSFW) classification.
 
 ```bash
 python nsfw_predict.py /tmp/test/test.jpeg
+python nsfw_predict_by_url.py {img_url}
 ```
 
 result : 
