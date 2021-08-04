@@ -15,7 +15,7 @@ python nsfw_predict_by_url.py {img_url}
 
 result : 
 ```bash
-{'class': 'sexy', 'probability': {'drawings': 0.008320281, 'hentai': 0.0011919827, 'neutral': 0.13077603, 'porn': 0.13146976, 'sexy': 0.72824186}}
+{'type': 'sexy', 'probability': {'drawings': 0.008320281, 'hentai': 0.0011919827, 'neutral': 0.13077603, 'porn': 0.13146976, 'sexy': 0.72824186}}
 ```
 
 can find the meaning of every label at repo [nsfw_data_scrapper](https://github.com/alexkimxyz/nsfw_data_scrapper)

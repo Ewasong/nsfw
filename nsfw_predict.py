@@ -43,7 +43,7 @@ def predict(image_path):
 
         probabilities_dict = {_LABEL_MAP.get(i): l for i, l in enumerate(probabilities[0])}
         pre_label = _LABEL_MAP.get(class_index[0])
-        result = {"class": pre_label, "probability": probabilities_dict}
+        result = {"type": pre_label, "probability": probabilities_dict}
         return result
 
 
