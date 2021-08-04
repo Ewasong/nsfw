@@ -21,6 +21,7 @@ def standardize(img):
 
 def load_image(image_path):
     img = Image.open(image_path)
+    img = img.convert('RGB')
     img = img.resize((_IMAGE_SIZE, _IMAGE_SIZE))
     img.load()
     data = np.asarray(img, dtype="float32")
