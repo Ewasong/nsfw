@@ -24,8 +24,8 @@ def standardize(img):
 
 def load_image_by_url( url ) :
     response = req.get(url)
-    img = img.convert('RGB')
     img = Image.open(BytesIO(response.content))
+    img = img.convert('RGB')
     img = img.resize((_IMAGE_SIZE, _IMAGE_SIZE))
     img.load()
     data = np.asarray( img, dtype=np.float32 )
